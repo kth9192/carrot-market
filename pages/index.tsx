@@ -2,14 +2,21 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
-
+import { useRouter } from 'next/router';
 const Home: NextPage = () => {
+  const router = useRouter();
+
+  const moveToDetailpage = (id: number) => {
+    router.push(`/items/${id}`);
+  };
+
   return (
     <div className="flex flex-col space-y-5 py-10">
       {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, i) => (
         <div
           key={i}
           className="flex cursor-pointer justify-between border-b px-4 pb-4 "
+          onClick={() => moveToDetailpage(i)}
         >
           <div className="flex space-x-4">
             <div className="h-20 w-20 rounded-md bg-gray-400" />

@@ -1,6 +1,13 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 
 function Community() {
+  const router = useRouter();
+
+  const moveToWrite = () => {
+    router.push(`/community/write`);
+  };
+
   return (
     <div className="space-y-8 py-16 px-4">
       {Array.from({ length: 6 }).map((_, idx) => (
@@ -55,7 +62,10 @@ function Community() {
         </div>
       ))}
 
-      <button className="flex aspect-square w-[40px] items-center justify-center rounded-full bg-orange-500  text-white">
+      <button
+        className="fixed bottom-5 right-5 flex aspect-square w-[40px] items-center justify-center rounded-full bg-orange-500 text-white"
+        onClick={moveToWrite}
+      >
         <svg
           className="h-6 w-6"
           fill="none"

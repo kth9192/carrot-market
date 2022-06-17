@@ -1,3 +1,4 @@
+import { NextPage } from 'next/types';
 import React from 'react';
 
 const CommunityPostDetail: NextPage = () => {

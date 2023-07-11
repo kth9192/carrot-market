@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { cls } from '../libs/utils';
+import { cls } from '../libs/client/utils';
 
 interface LayoutProps {
   title?: string;
@@ -21,7 +21,7 @@ function Layout({ title, hasTabBar, canGoBack, children }: LayoutProps) {
     <div>
       <div
         className={cls(
-          'fixed top-0 z-50 flex w-full max-w-xl  items-center justify-center border-b bg-white py-3 px-10 text-lg font-medium text-gray-700',
+          'fixed top-0 z-50 flex w-full max-w-xl  items-center justify-center border-b bg-white px-10 py-3 text-lg font-medium text-gray-700',
           !canGoBack ? 'justify-center' : '',
         )}
       >
@@ -57,7 +57,7 @@ function Layout({ title, hasTabBar, canGoBack, children }: LayoutProps) {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 className="h-6 w-6"
               >

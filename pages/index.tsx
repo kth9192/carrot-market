@@ -4,8 +4,15 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
 import { useRouter } from 'next/router';
 import Layout from '../components/layout';
+import useUser from '@libs/client/userUser';
+
 const Home: NextPage = () => {
   const router = useRouter();
+  const user = useUser();
+
+  console.log('====================================');
+  console.log(user);
+  console.log('====================================');
 
   const moveToDetailpage = (id: number) => {
     router.push(`/items/${id}`);
@@ -13,6 +20,9 @@ const Home: NextPage = () => {
 
   return (
     <Layout title="홈" hasTabBar>
+      <Head>
+        <title>Home</title>
+      </Head>
       <div className="flex flex-col space-y-5 py-10">
         {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, i) => (
           <div

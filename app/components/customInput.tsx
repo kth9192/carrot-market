@@ -2,6 +2,7 @@ import { HTMLInputTypeAttribute } from 'react';
 
 interface CustomInputProps {
   type: HTMLInputTypeAttribute;
+  name: string;
   placeholder?: string;
   required?: boolean;
   errors: string[];
@@ -12,7 +13,10 @@ function CustomInput({
   placeholder,
   required = true,
   errors,
+  name,
 }: CustomInputProps) {
+  console.log(errors);
+
   return (
     <div className="flex flex-col gap-2">
       <input
@@ -20,10 +24,11 @@ function CustomInput({
         type={type}
         placeholder={placeholder}
         required={required}
+        name={name}
       />
-      <span className="font-medium text-red-500">
-        {errors.map((error) => (
-          <span key={error}>{error}</span>
+      <span className="flex flex-col font-medium text-red-500">
+        {errors.map((error, idx) => (
+          <span key={idx}>{error}</span>
         ))}
       </span>
     </div>

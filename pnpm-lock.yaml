@@ -29,9 +29,6 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
-  react-hook-form:
-    specifier: ^7.51.0
-    version: 7.51.0(react@18.2.0)
   sass:
     specifier: ^1.71.1
     version: 1.71.1
@@ -55,6 +52,9 @@ devDependencies:
   '@types/react':
     specifier: 18.2.64
     version: 18.2.64
+  '@types/react-dom':
+    specifier: ^18.2.21
+    version: 18.2.21
   autoprefixer:
     specifier: ^10.4.18
     version: 10.4.18(postcss@8.4.35)
@@ -417,6 +417,12 @@ packages:
 
   /@types/prop-types@15.7.11:
     resolution: {integrity: sha512-ga8y9v9uyeiLdpKddhxYQkxNDrfvuPrlFb0N1qnZZByvcElJaXthF1UhvCh9TLWJBEHeNtdnbysW7Y6Uq8CVng==}
+    dev: true
+
+  /@types/react-dom@18.2.21:
+    resolution: {integrity: sha512-gnvBA/21SA4xxqNXEwNiVcP0xSGHh/gi1VhWv9Bl46a0ItbTT5nFY+G9VSQpaG/8N/qdJpJ+vftQ4zflTtnjLw==}
+    dependencies:
+      '@types/react': 18.2.64
     dev: true
 
   /@types/react@18.2.64:
